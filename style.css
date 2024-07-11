@@ -1,8 +1,7 @@
 .container{
     display: flex;
     flex-wrap: wrap;
-    max-width: 1200px;
-    margin: 0;
+    border: solid red 1px;
 }
 
 .grid-item{

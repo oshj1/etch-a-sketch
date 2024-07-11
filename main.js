@@ -1,8 +1,19 @@
 const container = document.querySelector(".container");
+const Rows = 16;
+const ItemsPerRow = 16;
 
-// create divs
-for(i=0; i<32; i++){
-    let newDiv = document.createElement("div");
-    newDiv.setAttribute("class", "grid-item");
-    container.appendChild(newDiv);
+function createGrid(){
+    for (let i=0; i<Rows; i++){
+        let newRow = document.createElement("div");
+        newRow.setAttribute("class", "row");
+        container.appendChild(newRow);
+
+        for(let i=0; i<ItemsPerRow; i++){
+            let newGridItem = document.createElement("div");
+            newGridItem.setAttribute("class", "grid-item");
+            newRow.appendChild(newGridItem);
+        }
+    }
 }
+
+createGrid();
