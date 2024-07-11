@@ -1,7 +1,9 @@
 const container = document.querySelector(".container");
-const Rows = 16;
-const ItemsPerRow = 16;
-const Color = "green"
+const newSketchBtn = document.querySelector(".new-sketch-btn");
+
+let Rows = 16;
+let ItemsPerRow = 16;
+let Color = "green"
 
 
 function createGrid(){
@@ -22,5 +24,20 @@ function createGrid(){
         }
     }
 }
+
+function deleteGrid(){
+    container.textContent ="";
+}
+
+newSketchBtn.addEventListener("click", function(){
+    input = prompt("How many squares in each column?")
+    if (input > 100){
+        alert("too large");
+        return;
+    }
+
+    console.log("creating new sketch")
+    deleteGrid();
+});
 
 createGrid();
