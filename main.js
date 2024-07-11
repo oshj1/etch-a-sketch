@@ -6,6 +6,10 @@ let Rows = 30;
 let ItemsPerRow = 16;
 let Color = "green"
 
+function getRandomColor(){
+    let randomColor = Math.floor(Math.random()*16777215).toString(16);
+    return randomColor;
+}
 
 function createGrid(Rows, ItemsPerRow){
     for (let i=0; i<Rows; i++){
@@ -18,7 +22,7 @@ function createGrid(Rows, ItemsPerRow){
             newGridItem.setAttribute("class", "grid-item");
 
             newGridItem.addEventListener("mouseenter", function(){
-                newGridItem.style.backgroundColor = Color;
+                newGridItem.style.backgroundColor = "#" + getRandomColor();
             });
 
             newRow.appendChild(newGridItem);
