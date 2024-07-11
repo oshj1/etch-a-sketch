@@ -1,6 +1,7 @@
 const container = document.querySelector(".container");
 const Rows = 16;
 const ItemsPerRow = 16;
+const Color = "green"
 
 
 function createGrid(){
@@ -14,7 +15,7 @@ function createGrid(){
             newGridItem.setAttribute("class", "grid-item");
 
             newGridItem.addEventListener("mouseenter", function(){
-                newGridItem.style.backgroundColor = "green";
+                newGridItem.style.backgroundColor = Color;
             });
 
             newRow.appendChild(newGridItem);
