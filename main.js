@@ -1,8 +1,11 @@
 const container = document.querySelector(".container");
 const newSketchBtn = document.querySelector(".new-sketch-btn");
+const containerHeight = 800;
+const containerWidth = 800;
+
 
 // default values
-let Rows = 30;
+let Rows = 16;
 let ItemsPerRow = 16;
 let Color = "green"
 
@@ -20,6 +23,10 @@ function createGrid(Rows, ItemsPerRow){
         for(let i=0; i<ItemsPerRow; i++){
             let newGridItem = document.createElement("div");
             newGridItem.setAttribute("class", "grid-item");
+            newGridItem.style.height = containerHeight/Rows -2+ "px"; 
+            newGridItem.style.width = containerWidth/Rows -2+ "px";
+
+            console.log(650/Rows + "px");
 
             newGridItem.addEventListener("mouseenter", function(){
                 newGridItem.style.backgroundColor = "#" + getRandomColor();
